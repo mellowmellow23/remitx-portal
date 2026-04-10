@@ -1,16 +1,79 @@
-# React + Vite
+# RemitX Portal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Web3 dApp frontend for the RemitX Token (RMX) — a cross-border remittance reward token deployed on Sepolia testnet.
 
-Currently, two official plugins are available:
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+![Network](https://img.shields.io/badge/network-Sepolia-blue)
+![Stack](https://img.shields.io/badge/stack-React%20%2B%20wagmi%20%2B%20viem-purple)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## What it does
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Connects to MetaMask and any EVM wallet via RainbowKit
+- Displays your live RMX token balance from the Sepolia blockchain
+- Shows total supply and tokenomics in real time
+- Send RMX tokens to any wallet address
+- Burn RMX tokens to redeem transfer fee discounts
+- Transaction confirmations with live Etherscan links
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech stack
+
+| Tool | Role |
+|---|---|
+| React 18 + Vite | Frontend framework and build tool |
+| wagmi v2 | Ethereum hooks for React |
+| viem v2 | Ethereum utility library |
+| RainbowKit v2 | Wallet connection UI |
+| TanStack Query v5 | Async state management |
+| react-hot-toast | Transaction notifications |
+
+---
+
+## Smart contract
+
+This dApp connects to the RemitX Token smart contract:
+
+| | |
+|---|---|
+| Network | Sepolia Testnet |
+| Contract address | `0x04704a2d38378Cc084AF2604d7211C531b71163b` |
+| Verified source | [View on Etherscan](https://sepolia.etherscan.io/address/0x04704a2d38378Cc084AF2604d7211C531b71163b) |
+| Contract repo | [remitx-token](https://github.com/mellowmellow23/remitx-token) |
+
+---
+
+## How to run locally
+
+**Prerequisites:** Node.js 18+, MetaMask browser extension, Sepolia testnet wallet.
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/mellowmellow23/remitx-portal.git
+cd remitx-portal
+
+# 2. Install dependencies
+npm install --legacy-peer-deps
+
+# 3. Start the dev server
+npm run dev
+```
+
+Open `http://localhost:5173` in your browser.
+
+---
+
+## Live demo
+
+Deployed on Vercel — [remitx-portal.vercel.app](https://remitx-portal.vercel.app)
+
+---
+
+## Repo structure
+---
+
+## License
+
+MIT

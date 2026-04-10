@@ -1,13 +1,17 @@
 import { getDefaultConfig } from "@rainbow-me/rainbowkit";
 import { sepolia } from "wagmi/chains";
-import { http } from "wagmi";
+import { http, fallback } from "wagmi";
 
 export const config = getDefaultConfig({
   appName: "RemitX Portal",
   projectId: "40743824a33e49955000d3d7823fa671",
   chains: [sepolia],
   transports: {
-    [sepolia.id]: http("https://eth-sepolia.g.alchemy.com/v2/60l-mhw0CkI62mc1aSdvc"),
+    [sepolia.id]: fallback([
+      http("https://eth-sepolia.g.alchemy.com/v2/60l-mhw0CkI62mc1aSdvc"),
+      http("https://rpc.sepolia.org"),
+      http("https://sepolia.gateway.tenderly.co"),
+    ]),
   },
   ssr: false,
 });

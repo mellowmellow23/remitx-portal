@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 1. Nuke the browser defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Force the root elements to span the entire screen */
+html, body, #root {
+  width: 100vw;
+  height: 100vh;
+  background-color: #050505;
+  color: #F0F0EF;
+  overflow: hidden; /* Stops any rogue scrollbars */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}

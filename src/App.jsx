@@ -5,6 +5,7 @@ import { useAccount, useReadContract } from "wagmi";
 import { formatEther } from "viem";
 import { REMITX_ADDRESS, REMITX_ABI } from "./config";
 import Dashboard from "./components/Dashboard";
+import Security from "./pages/Security";
 import "./App.css";
 
 function App() {

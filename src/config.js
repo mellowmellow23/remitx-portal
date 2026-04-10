@@ -1,15 +1,13 @@
 import { getDefaultConfig } from "@rainbow-me/rainbowkit";
 import { sepolia } from "wagmi/chains";
-import { http, custom } from "wagmi";
-import { injected } from "@wagmi/connectors";
+import { http } from "wagmi";
 
 export const config = getDefaultConfig({
   appName: "RemitX Portal",
   projectId: "40743824a33e49955000d3d7823fa671",
   chains: [sepolia],
-  connectors: [injected()],
   transports: {
-    [sepolia.id]: custom(window.ethereum),
+    [sepolia.id]: http("https://eth-sepolia.g.alchemy.com/v2/60l-mhw0CkI62mc1aSdvc"),
   },
   ssr: false,
 });

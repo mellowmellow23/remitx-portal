@@ -4,7 +4,6 @@ import { useAccount, useReadContract } from "wagmi";
 import { formatEther } from "viem";
 import { REMITX_ADDRESS, REMITX_ABI } from "./config";
 import Dashboard from "./components/Dashboard";
-import Debug from "./Debug";
 import "./App.css";
 
 function App() {
@@ -86,8 +85,7 @@ function App() {
         </div>
       </footer>
           <Toaster position="bottom-right" toastOptions={{ style: { background: "#0F172A", color: "#fff", border: "1px solid rgba(140,244,14,0.3)" } }} />
-      <Debug />
-</div>
+    </div>
   );
 }
 

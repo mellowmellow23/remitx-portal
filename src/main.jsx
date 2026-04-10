@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App.jsx';
+import Security from './pages/Security.jsx';
+import Whitepaper from './pages/Whitepaper.jsx';
 import './index.css';
 import '@rainbow-me/rainbowkit/styles.css';
 import { RainbowKitProvider, darkTheme } from '@rainbow-me/rainbowkit';
@@ -21,7 +24,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             borderRadius: 'large',
           })}
         >
-          <App />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<App />} />
+              <Route path="/security" element={<Security />} />
+              <Route path="/whitepaper" element={<Whitepaper />} />
+            </Routes>
+          </BrowserRouter>
         </RainbowKitProvider>
       </QueryClientProvider>
     </WagmiProvider>

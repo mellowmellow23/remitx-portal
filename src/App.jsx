@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { Toaster } from "react-hot-toast";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAccount, useReadContract } from "wagmi";
@@ -8,6 +9,7 @@ import "./App.css";
 
 function App() {
   const { isConnected } = useAccount();
+  const navigate = useNavigate();
 
   // Fetch Live Total Supply to calculate burn
   const { data: totalSupply } = useReadContract({
@@ -29,9 +31,9 @@ function App() {
           <span className="logo" style={{ fontSize: '26px', fontWeight: '800', letterSpacing: '-0.5px' }}>RemitX</span>
         </div>
         <nav style={{ display: 'flex', gap: '2.5rem', fontSize: '15px', fontWeight: '600', letterSpacing: '0.5px' }}>
-          <a href="#" style={{ color: '#F0F0EF', textDecoration: 'none', opacity: 0.8 }}>Home</a>
-          <a href="#" style={{ color: '#F0F0EF', textDecoration: 'none', opacity: 0.5 }}>Security</a>
-          <a href="#" style={{ color: '#F0F0EF', textDecoration: 'none', opacity: 0.5 }}>Whitepaper</a>
+          <span onClick={() => navigate("/")} style={{ color: '#F0F0EF', textDecoration: 'none', opacity: 0.8, cursor: 'pointer' }}>Home</span>
+          <span onClick={() => navigate("/security")} style={{ color: '#F0F0EF', textDecoration: 'none', opacity: 0.5, cursor: 'pointer' }}>Security</span>
+          <span onClick={() => navigate("/whitepaper")} style={{ color: '#F0F0EF', textDecoration: 'none', opacity: 0.5, cursor: 'pointer' }}>Whitepaper</span>
         </nav>
         <ConnectButton label="Connect Wallet" accountStatus="address" chainStatus="none" />
       </header>

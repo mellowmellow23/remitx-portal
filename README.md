@@ -77,3 +77,4 @@ Deployed on Vercel — [remitx-portal.vercel.app](https://remitx-portal.vercel.a
 ## License
 
 MIT
+# RemitX Portal
